@@ -64,4 +64,19 @@ describe "Static pages" do
                                 :text => "#{base_title} | Contact Us")
     end
   end
+
+  describe "David David Heinemeier Hansson page" do
+
+    it "should have the content 'Who is David Heinemeier Hansson?'" do
+      visit '/static_pages/dhh'
+      page.should have_selector('h1', 
+                                :text => 'Who is David Heinemeier Hansson?')
+    end
+
+    it "should have the right title" do
+      visit '/static_pages/dhh'
+      page.should have_selector('title',
+                                :text => "#{base_title} | DHH")
+    end
+  end
 end
