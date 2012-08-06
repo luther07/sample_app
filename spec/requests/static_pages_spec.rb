@@ -8,18 +8,17 @@ describe "Static pages" do
 
     it "should have the h1 'Sample App'" do
       visit '/static_pages/home'
-      page.should have_selector('h1', :text => 'Sample App')
+      page.should have_selector('h1', text: 'Sample App')
     end
 
     it "should have the base title" do
       visit '/static_pages/home'
-      page.should have_selector('title',
-                                :text => "#{base_title}")
+      page.should have_selector('title', text: "#{base_title}")
     end
 
     it "should not have a custom page title" do
       visit '/static_pages/home'
-      page.should_not have_selector('title', :text => '| Home')
+      page.should_not have_selector('title', text: | "#{base_title} | Home")
     end
   end
 
@@ -27,13 +26,13 @@ describe "Static pages" do
 
     it "should have the content 'Help'" do
       visit '/static_pages/help'
-      page.should have_selector('h1', :text => 'Help')
+      page.should have_selector('h1', text: 'Help')
     end
 
     it "should have the right title" do
       visit '/static_pages/help'
       page.should have_selector('title',
-                                :text => "#{base_title} | Help")
+                                text: "#{base_title} | Help")
     end
   end
 
@@ -41,13 +40,13 @@ describe "Static pages" do
 
     it "should have the content 'About Us'" do
       visit '/static_pages/about'
-      page.should have_selector('h1', :text => 'About Us')
+      page.should have_selector('h1', text: 'About Us')
     end
 
     it "should have the right title" do
       visit '/static_pages/about'
       page.should have_selector('title',
-                                :text => "#{base_title} | About Us")
+                                text: "#{base_title} | About Us")
     end
   end
 
@@ -55,13 +54,13 @@ describe "Static pages" do
 
     it "should have the content 'Contact Us'" do
       visit '/static_pages/contact'
-      page.should have_selector('h1', :text => 'Contact Us')
+      page.should have_selector('h1', text: 'Contact Us')
     end
 
     it "should have the right title" do
       visit '/static_pages/contact'
       page.should have_selector('title',
-                                :text => "#{base_title} | Contact Us")
+                                text: "#{base_title} | Contact Us")
     end
   end
 
@@ -70,13 +69,13 @@ describe "Static pages" do
     it "should have the content 'Who is David Heinemeier Hansson?'" do
       visit '/static_pages/dhh'
       page.should have_selector('h1', 
-                                :text => 'Who is David Heinemeier Hansson?')
+                                text: 'Who is David Heinemeier Hansson?')
     end
 
     it "should have the right title" do
       visit '/static_pages/dhh'
       page.should have_selector('title',
-                                :text => "#{base_title} | DHH")
+                                text: "#{base_title} | DHH")
     end
   end
 end
