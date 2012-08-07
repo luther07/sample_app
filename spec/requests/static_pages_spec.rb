@@ -39,7 +39,7 @@ describe "Static pages" do
   describe "About page" do
 
     it "should have the content 'About Us'" do
-      visit 'about_about'
+      visit 'about_path'
       page.should have_selector('h1', text: 'About Us')
     end
 
