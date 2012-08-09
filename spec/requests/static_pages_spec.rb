@@ -29,17 +29,10 @@ describe "Static pages" do
   end
 
   describe "Contact page" do
+    before { visit contact_path }
 
-    it "should have the content 'Contact Us'" do
-      visit contact_path
-      page.should have_selector('h1', text: 'Contact Us')
-    end
-
-    it "should have the right title" do
-      visit contact_path
-      page.should have_selector('title',
-                                text: "#{base_title} | Contact Us")
-    end
+    it { should have_selector('h1', text: 'Contact Us') }
+    it { should have_selector('title', text: full_title('Contact')) }
   end
 
   describe "David David Heinemeier Hansson page" do
