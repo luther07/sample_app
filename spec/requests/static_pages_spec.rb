@@ -22,17 +22,10 @@ describe "Static pages" do
   end
 
   describe "About page" do
+    before { visit about_path }
 
-    it "should have the content 'About Us'" do
-      visit about_path
-      page.should have_selector('h1', text: 'About Us')
-    end
-
-    it "should have the right title" do
-      visit about_path
-      page.should have_selector('title',
-                                text: "#{base_title} | About Us")
-    end
+    it { should have_selector('h1', text: 'About Us') }
+    it { should have_selector('title', text: full_title('About')) }
   end
 
   describe "Contact page" do
